@@ -1,0 +1,81 @@
+"use strict";
+
+// let s = /*style*/`min-width: 100px; margin: 1%;`
+// console.log(s);
+
+setTimeout(function () {
+    let coverDiv = document.createElement("div");
+    coverDiv.id = "cover-div";
+    coverDiv.style.backgroundColor = "black";
+    coverDiv.style.opacity = "0.7";
+    coverDiv.style.position = "fixed";
+    coverDiv.style.top = "0";
+    coverDiv.style.left = "0";
+    coverDiv.style.width = "100vw";
+    coverDiv.style.height = "100vh";
+    coverDiv.style.zIndex = "1000";
+    coverDiv.style.display = "flex";
+    coverDiv.style.justifyContent = "center";
+    coverDiv.style.alignItems = "center";
+    document.body.appendChild(coverDiv);
+    let popUpDiv = document.createElement("div");
+    popUpDiv.id = "pop-up-div";
+    popUpDiv.style.backgroundColor = "lightgray";
+    popUpDiv.style.color = "black";
+    popUpDiv.style.width = "400px";
+    popUpDiv.style.height = "200px";
+    popUpDiv.style.position = "relative";
+    popUpDiv.style.zIndex = "1001";
+    popUpDiv.style.border = "1px solid rgb(221, 221, 221)";
+    popUpDiv.style.borderRadius = "5px";
+    popUpDiv.style.display = "flex";
+    popUpDiv.style.flexDirection = "column";
+    popUpDiv.style.justifyContent = "space-between";
+    coverDiv.appendChild(popUpDiv);
+    let popUpHeader = document.createElement("div");
+    popUpHeader.id = "pop-up-header";
+    popUpHeader.style.width = "100%";
+    popUpHeader.style.height = "calc((100% - 20px) / 2)";
+    popUpHeader.style.display = "flex";
+    popUpHeader.style.justifyContent = "center";
+    popUpHeader.style.alignItems = "flex-end";
+    popUpHeader.style.fontWeight = "bold";
+    popUpHeader.style.fontSize = "2em";
+    popUpHeader.style.textTransform = "capitalize";
+    popUpHeader.innerHTML = "welcome";
+    popUpDiv.appendChild(popUpHeader);
+    let popUpBody = document.createElement("div");
+    popUpBody.id = "pop-up-body";
+    popUpBody.style.width = "100%";
+    popUpBody.style.height = "calc((100% - 20px) / 2)";
+    popUpBody.style.display = "flex";
+    popUpBody.style.justifyContent = "center";
+    popUpBody.style.alignItems = "flex-start";
+    popUpBody.style.textTransform = "capitalize";
+    popUpBody.innerHTML = "welcome to elzero web school";
+    popUpDiv.appendChild(popUpBody);
+    //insert a button close button in popUpDiv
+    let closeButton = document.createElement("button");
+    closeButton.id = "close-button";
+    closeButton.style.position = "absolute";
+    closeButton.style.top = "0";
+    closeButton.style.right = "0";
+    closeButton.style.width = "20px";
+    closeButton.style.height = "20px";
+    closeButton.style.transform = "translate(50%, -50%)";
+    closeButton.style.backgroundColor = "red";
+    closeButton.style.color = "white";
+    closeButton.style.borderRadius = "50%";
+    closeButton.style.border = "none";
+    closeButton.style.cursor = "pointer";
+    closeButton.style.display = "flex";
+    closeButton.style.justifyContent = "center";
+    closeButton.style.alignItems = "center";
+    closeButton.style.fontWeight = "bold";
+    closeButton.innerHTML = "X";
+    popUpDiv.appendChild(closeButton);
+    // add event listener to close button
+    closeButton.addEventListener("click", function () {
+        coverDiv.remove();
+    });
+}, 5000);

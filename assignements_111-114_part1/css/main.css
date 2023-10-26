@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+select,
+input {
+    padding: 0;
+    outline: none;
+    border-radius: 5px;
+    width: 20%;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

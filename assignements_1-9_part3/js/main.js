@@ -1,0 +1,16 @@
+console.group('group1');
+console.log('log1');
+console.log('log2');
+console.group('child group');
+console.log('log3');
+console.log('log4');
+console.group("grandchild group");
+console.log('log5');
+console.log('log6');
+console.groupEnd();
+console.groupEnd();
+console.groupEnd();
+console.group('group2');
+console.log('log7');
+console.log('log8');
+console.groupEnd();
